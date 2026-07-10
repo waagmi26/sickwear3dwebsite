@@ -1387,7 +1387,7 @@ export default function Home() {
                     <AccordionTrigger className="px-4 py-3 bg-white/5 hover:bg-white/10 text-left font-medium text-sm text-white hover:text-[#BFF000] transition-colors [&[data-state=open]]:text-[#BFF000]">
                       {item.question}
                     </AccordionTrigger>
-                    <AccordionContent className="px-4 py-3 text-gray-400 text-sm">
+                    <AccordionContent forceMount className="px-4 py-3 text-gray-400 text-sm data-[state=closed]:hidden">
                       {item.answer.includes('@siddyb26') ? (
                         <>
                           Fill out the contact form below or reach us on Telegram ({' '}
