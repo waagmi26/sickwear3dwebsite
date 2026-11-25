@@ -8,11 +8,11 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sickwear.xyz"),
   title: {
-    default: "Sickwear – #1 Web3 Merch & Merchandise Partner for Global Communities",
+    default: "Sickwear – Web3, Event & Personalized Merch Partner",
     template: "%s | Sickwear",
   },
   description:
-    "Sickwear is the leading Web3 merchandise partner trusted by 80+ global companies including Coinbase, ETHGlobal, OKX, Polkadot & LayerZero. Premium custom merch, global shipping, crypto payments. Made in India.",
+    "Custom Web3, event & personalized merch trusted by 150+ clients including Coinbase, ETHGlobal & OKX. Made in India, shipped worldwide, crypto or fiat payment.",
   keywords: [
     "web3 merch",
     "web3 merchandise",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.sickwear.xyz",
     siteName: "Sickwear",
-    title: "Sickwear – #1 Web3 Merch Partner for Global Communities",
+    title: "Sickwear – Web3, Event & Personalized Merch Partner",
     description:
-      "Premium Web3 merchandise trusted by Coinbase, ETHGlobal, OKX, Polkadot & 80+ global companies. Custom merch, global shipping, crypto payments.",
+      "Custom Web3, event & personalized merch trusted by 150+ clients including Coinbase, ETHGlobal & OKX. Made in India, shipped worldwide, crypto or fiat payment.",
     images: [
       {
         url: "/images/sickwear-og.jpg",
@@ -64,9 +64,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sickwear_xyz",
     creator: "@sickwear_xyz",
-    title: "Sickwear – #1 Web3 Merch Partner",
+    title: "Sickwear – Web3, Event & Personalized Merch Partner",
     description:
-      "Premium Web3 merchandise trusted by 80+ global companies. Custom merch, global shipping, crypto payments.",
+      "Custom Web3, event & personalized merch trusted by 150+ clients including Coinbase, ETHGlobal & OKX. Made in India, shipped worldwide, crypto or fiat payment.",
     images: ["/images/sickwear-og.jpg"],
   },
   robots: {
@@ -92,30 +92,67 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <link rel="canonical" href="https://www.sickwear.xyz" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Sickwear",
-              url: "https://www.sickwear.xyz",
-              logo: "https://www.sickwear.xyz/images/sickwear-logo-square.png",
-              description:
-                "Sickwear is the #1 Web3 merchandise partner trusted by 80+ global companies. Premium custom merch with global shipping and crypto payments.",
-              contactPoint: {
-                "@type": "ContactPoint",
-                contactType: "customer service",
-                email: "sickwear.xyz@gmail.com",
-                availableLanguage: "English",
-              },
-              sameAs: [
-                "https://x.com/sickwear_xyz",
-                "https://t.me/sickweareth",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.sickwear.xyz/#organization",
+                  name: "Sickwear",
+                  url: "https://www.sickwear.xyz",
+                  logo: "https://www.sickwear.xyz/images/sickwear-logo-square.png",
+                  image: "https://www.sickwear.xyz/images/sickwear-og.jpg",
+                  slogan: "Pioneer in Web3 Merch",
+                  description:
+                    "Sickwear makes custom merchandise for Web3 projects, events, communities and brands. Made in India, shipped to 150+ countries, payable in crypto or fiat.",
+                  email: "sickwear.xyz@gmail.com",
+                  contactPoint: {
+                    "@type": "ContactPoint",
+                    contactType: "sales",
+                    email: "sickwear.xyz@gmail.com",
+                    availableLanguage: "English",
+                  },
+                  sameAs: ["https://x.com/sickwear_xyz", "https://t.me/sickweareth"],
+                  areaServed: "Worldwide",
+                  foundingLocation: { "@type": "Place", name: "India" },
+                  knowsAbout: [
+                    "Web3 merchandise",
+                    "Crypto merch",
+                    "Event and hackathon swag",
+                    "Custom apparel",
+                    "NFC-enabled merchandise",
+                  ],
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: "Custom merchandise",
+                    itemListElement: [
+                      "Apparel",
+                      "Accessories",
+                      "Bags",
+                      "Leather items",
+                      "Drinkware",
+                      "Gadgets",
+                      "Stationery",
+                      "Event items",
+                      "Gift hampers",
+                    ].map((name) => ({
+                      "@type": "Offer",
+                      itemOffered: { "@type": "Service", name: "Custom " + name.toLowerCase() },
+                    })),
+                  },
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://www.sickwear.xyz/#website",
+                  url: "https://www.sickwear.xyz",
+                  name: "Sickwear",
+                  inLanguage: "en",
+                  publisher: { "@id": "https://www.sickwear.xyz/#organization" },
+                },
               ],
-              areaServed: "Worldwide",
-              foundingLocation: "India",
             }),
           }}
         />

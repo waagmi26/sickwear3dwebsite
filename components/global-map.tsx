@@ -8,35 +8,31 @@ interface EventLocation {
   country: string
   description: string
   coordinates: { x: number; y: number }
-  year: string
-  attendees?: string
 }
 
 const eventLocations: EventLocation[] = [
-  { name: "ETHDenver", country: "USA", description: "Denver, Colorado", coordinates: { x: 17, y: 17 }, year: "2024", attendees: "15k+" },
-  { name: "EthCC Cannes", country: "France", description: "Cannes", coordinates: { x: 47, y: 18 }, year: "2024", attendees: "10k+" },
-  { name: "EthCC Paris", country: "France", description: "Paris", coordinates: { x: 47, y: 16 }, year: "2024", attendees: "12k+" },
-  { name: "EthCC Berlin", country: "Germany", description: "Berlin", coordinates: { x: 51, y: 14 }, year: "2024", attendees: "10k+" },
-  { name: "Token2049 Singapore", country: "Singapore", description: "Singapore", coordinates: { x: 79, y: 32 }, year: "2024", attendees: "20k+" },
-  { name: "Token2049 Dubai", country: "UAE", description: "Dubai", coordinates: { x: 62, y: 24 }, year: "2024", attendees: "15k+" },
-  { name: "Consensus Hong Kong", country: "Hong Kong", description: "Hong Kong", coordinates: { x: 81, y: 23 }, year: "2024", attendees: "18k+" },
-  { name: "Consensus Austin", country: "USA", description: "Austin, Texas", coordinates: { x: 19, y: 20 }, year: "2024", attendees: "18k+" },
-  { name: "Consensus New York", country: "USA", description: "New York", coordinates: { x: 26, y: 15 }, year: "2024", attendees: "16k+" },
-  { name: "ETHIndia", country: "India", description: "India", coordinates: { x: 70, y: 28 }, year: "2024", attendees: "12k+" },
-  { name: "ETHGlobal New York", country: "USA", description: "New York", coordinates: { x: 26, y: 15 }, year: "2024", attendees: "14k+" },
-  { name: "ETHGlobal India", country: "India", description: "India", coordinates: { x: 70, y: 28 }, year: "2024", attendees: "10k+" },
-  { name: "Devcon Thailand", country: "Thailand", description: "Bangkok", coordinates: { x: 78, y: 27 }, year: "2024", attendees: "12k+" },
-  { name: "Devcon Argentina", country: "Argentina", description: "Buenos Aires", coordinates: { x: 30, y: 42 }, year: "2024", attendees: "10k+" },
-  { name: "Devcon Istanbul", country: "Turkey", description: "Istanbul", coordinates: { x: 57, y: 19 }, year: "2024", attendees: "8k+" },
-  { name: "Blockchain Week Dubai", country: "UAE", description: "Dubai", coordinates: { x: 62, y: 24 }, year: "2024", attendees: "20k+" },
-  { name: "Blockchain Week Paris", country: "France", description: "Paris", coordinates: { x: 47, y: 16 }, year: "2024", attendees: "15k+" },
-  { name: "Blockchain Week Korea", country: "South Korea", description: "Seoul", coordinates: { x: 86, y: 19 }, year: "2024", attendees: "12k+" },
-  { name: "ETHTokyo", country: "Japan", description: "Tokyo", coordinates: { x: 89, y: 18 }, year: "2024", attendees: "7k+" },
-  { name: "Blockchain Week Japan", country: "Japan", description: "Tokyo", coordinates: { x: 89, y: 18 }, year: "2024", attendees: "10k+" },
-  { name: "Solana Breakpoint Abu Dhabi", country: "UAE", description: "Abu Dhabi", coordinates: { x: 61, y: 25 }, year: "2024", attendees: "15k+" },
-  { name: "Blockchain Week New York", country: "USA", description: "New York", coordinates: { x: 26, y: 15 }, year: "2024", attendees: "18k+" },
-  { name: "Web3 Summit", country: "Portugal", description: "Lisbon", coordinates: { x: 42, y: 19 }, year: "2024", attendees: "8k+" },
-  { name: "Blocktrain", country: "India", description: "India", coordinates: { x: 70, y: 28 }, year: "2024", attendees: "5k+" },
+  { name: "ETHDenver", country: "USA", description: "Denver, Colorado", coordinates: { x: 17, y: 17 } },
+  { name: "EthCC", country: "Europe", description: "A different city each year", coordinates: { x: 47, y: 16 } },
+  { name: "Token2049 Singapore", country: "Singapore", description: "Singapore", coordinates: { x: 79, y: 32 } },
+  { name: "Token2049 Dubai", country: "UAE", description: "Dubai", coordinates: { x: 62, y: 24 } },
+  { name: "Consensus Hong Kong", country: "Hong Kong", description: "Hong Kong", coordinates: { x: 81, y: 23 } },
+  { name: "Consensus Austin", country: "USA", description: "Austin, Texas", coordinates: { x: 19, y: 20 } },
+  { name: "Consensus New York", country: "USA", description: "New York", coordinates: { x: 26, y: 15 } },
+  { name: "ETHIndia", country: "India", description: "India", coordinates: { x: 70, y: 28 } },
+  { name: "ETHGlobal New York", country: "USA", description: "New York", coordinates: { x: 26, y: 15 } },
+  { name: "ETHGlobal India", country: "India", description: "India", coordinates: { x: 70, y: 28 } },
+  { name: "Devcon Thailand", country: "Thailand", description: "Bangkok", coordinates: { x: 78, y: 27 } },
+  { name: "Devconnect Argentina", country: "Argentina", description: "Buenos Aires", coordinates: { x: 30, y: 42 } },
+  { name: "Devconnect Istanbul", country: "Turkey", description: "Istanbul", coordinates: { x: 57, y: 19 } },
+  { name: "Blockchain Week Dubai", country: "UAE", description: "Dubai", coordinates: { x: 62, y: 24 } },
+  { name: "Blockchain Week Paris", country: "France", description: "Paris", coordinates: { x: 47, y: 16 } },
+  { name: "Blockchain Week Korea", country: "South Korea", description: "Seoul", coordinates: { x: 86, y: 19 } },
+  { name: "ETHTokyo", country: "Japan", description: "Tokyo", coordinates: { x: 89, y: 18 } },
+  { name: "Blockchain Week Japan", country: "Japan", description: "Tokyo", coordinates: { x: 89, y: 18 } },
+  { name: "Solana Breakpoint Abu Dhabi", country: "UAE", description: "Abu Dhabi", coordinates: { x: 61, y: 25 } },
+  { name: "Blockchain Week New York", country: "USA", description: "New York", coordinates: { x: 26, y: 15 } },
+  { name: "Web3 Summit", country: "Germany", description: "Berlin", coordinates: { x: 51, y: 14 } },
+  { name: "Blocktrain", country: "India", description: "India", coordinates: { x: 70, y: 28 } },
 ]
 
 // Comprehensive high-detail dotted world map
@@ -455,7 +451,7 @@ export default function GlobalMap() {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto text-center mb-12"
         >
-          <motion.h2
+          <motion.h1
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -463,7 +459,7 @@ export default function GlobalMap() {
             className="text-3xl md:text-5xl font-bold mb-4 text-white"
           >
             Global Presence
-          </motion.h2>
+          </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -472,7 +468,7 @@ export default function GlobalMap() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-[#BFF000]"
           >
-            From Web3 conferences to blockchain summits, delivering premium merch across continents
+            From Web3 conferences to blockchain summits, delivering premium merch across continents since 2021
           </motion.p>
         </motion.div>
 
@@ -607,14 +603,10 @@ export default function GlobalMap() {
               >
                 <div className="flex items-start justify-between mb-2 gap-4">
                   <h3 className="text-lg font-bold text-[#BFF000]">{hoveredLocation.name}</h3>
-                  <span className="text-xs text-white/60 bg-white/10 px-2 py-1 rounded">{hoveredLocation.year}</span>
                 </div>
                 <p className="text-sm text-white/90 mb-1">{hoveredLocation.description}</p>
                 <div className="flex items-center justify-between text-xs">
                   <span className="text-white/70">{hoveredLocation.country}</span>
-                  {hoveredLocation.attendees && (
-                    <span className="text-[#BFF000]/80">{hoveredLocation.attendees} attendees</span>
-                  )}
                 </div>
               </motion.div>
             )}
@@ -671,9 +663,9 @@ export default function GlobalMap() {
             className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
           >
             {[
-              { label: "Countries", value: "20+" },
-              { label: "Events", value: "25+" },
-              { label: "Clients", value: "100+" },
+              { label: "Event Countries", value: "20+" },
+              { label: "Global Events", value: "25+" },
+              { label: "Clients", value: "150+" },
               { label: "Products", value: "30k+" },
             ].map((stat, index) => (
               <motion.div

@@ -15,7 +15,7 @@ export default function ClientLogos() {
           className="max-w-3xl mx-auto text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Clients</h2>
-          <p className="text-xl text-white/70">Trusted by 80+ leading Web3 companies and organizations worldwide</p>
+          <p className="text-xl text-white/70">Trusted by 150+ leading Web3 companies and organizations worldwide</p>
         </motion.div>
 
         {/* Client Logos Banner */}
