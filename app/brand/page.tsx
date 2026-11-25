@@ -61,17 +61,17 @@ export default function BrandPage() {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
               {[
-                { src: "/images/sickwear-logo-green.png", alt: "Sickwear Green Logo" },
-                { src: "/images/sickwear-logo-black.png", alt: "Sickwear Black Logo" },
-                { src: "/images/sickwear-logo-blue.png", alt: "Sickwear Blue Logo" },
-                { src: "/images/sickwear-logo-white.png", alt: "Sickwear White Logo" },
+                { src: "/images/sickwear-logo.svg", alt: "Sickwear primary logo", bg: "bg-black" },
+                { src: "/images/sickwear-logo-mono-black.svg", alt: "Sickwear black logo", bg: "bg-white" },
+                { src: "/images/sickwear-og.jpg", alt: "Sickwear logo with tagline", bg: "bg-black" },
+                { src: "/images/sickwear-logo-mono-white.svg", alt: "Sickwear white logo", bg: "bg-black" },
               ].map((logo, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="aspect-square bg-gradient-to-br from-white/5 to-white/10 rounded-xl p-6 flex items-center justify-center"
+                  className={`aspect-square ${logo.bg} border border-white/10 rounded-xl p-6 flex items-center justify-center`}
                 >
                   <Image
                     src={logo.src || "/placeholder.svg"}
@@ -103,8 +103,8 @@ export default function BrandPage() {
                 <div>
                   <h2 className="text-3xl font-bold mb-6">Logo Specifications</h2>
                   <p className="text-white/70 mb-6">
-                    The Sickwear logo features a distinctive blob shape with playful typography. The organic form
-                    represents creativity, fluidity, and the brand's dynamic nature.
+                    The Sickwear logo pairs a shaka hand sign with a bold, rounded wordmark. The playful shapes
+                    represent creativity, energy, and the brand's dynamic nature.
                   </p>
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center">
@@ -124,7 +124,7 @@ export default function BrandPage() {
                 </div>
                 <div className="bg-gradient-to-br from-white/5 to-white/10 rounded-xl p-8 flex items-center justify-center">
                   <Image
-                    src="/images/sickwear-logo-green.png"
+                    src="/images/sickwear-logo.svg"
                     alt="Sickwear Logo Specifications"
                     width={300}
                     height={300}

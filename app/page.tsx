@@ -216,22 +216,22 @@ export default function Home() {
               }}
             >
               <Image
-                src="/images/sickwear-logo-bw.png"
+                src="/images/sickwear-logo-mono-white.svg"
                 alt="Sickwear"
-                width={320}
-                height={115}
-                className={`h-28 w-auto transition-all duration-300 ${
+                width={739}
+                height={574}
+                className={`h-20 w-auto transition-all duration-300 ${
                   activeSection === "home" || activeSection === "" ? "opacity-0" : "group-hover:opacity-0"
                 }`}
                 style={{ background: 'transparent' }}
                 priority
               />
               <Image
-                src="/images/sickwear-logo-color.png"
+                src="/images/sickwear-logo.svg"
                 alt="Sickwear"
-                width={320}
-                height={115}
-                className={`h-28 w-auto absolute top-0 left-0 transition-all duration-300 ${
+                width={739}
+                height={574}
+                className={`h-20 w-auto absolute top-0 left-0 transition-all duration-300 ${
                   activeSection === "home" || activeSection === "" ? "opacity-100" : "opacity-0 group-hover:opacity-100"
                 }`}
                 style={{ background: 'transparent' }}
