@@ -36,6 +36,13 @@ export const metadata: Metadata = {
   creator: "Sickwear",
   publisher: "Sickwear",
   category: "ecommerce",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -46,7 +53,7 @@ export const metadata: Metadata = {
       "Premium Web3 merchandise trusted by Coinbase, ETHGlobal, OKX, Polkadot & 80+ global companies. Custom merch, global shipping, crypto payments.",
     images: [
       {
-        url: "/images/sickwear-logo-color.png",
+        url: "/images/sickwear-og.jpg",
         width: 1200,
         height: 630,
         alt: "Sickwear – Web3 Merch Partner",
@@ -60,7 +67,7 @@ export const metadata: Metadata = {
     title: "Sickwear – #1 Web3 Merch Partner",
     description:
       "Premium Web3 merchandise trusted by 80+ global companies. Custom merch, global shipping, crypto payments.",
-    images: ["/images/sickwear-logo-color.png"],
+    images: ["/images/sickwear-og.jpg"],
   },
   robots: {
     index: true,
@@ -94,7 +101,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Sickwear",
               url: "https://www.sickwear.xyz",
-              logo: "https://www.sickwear.xyz/images/sickwear-logo-color.png",
+              logo: "https://www.sickwear.xyz/images/sickwear-logo-square.png",
               description:
                 "Sickwear is the #1 Web3 merchandise partner trusted by 80+ global companies. Premium custom merch with global shipping and crypto payments.",
               contactPoint: {
