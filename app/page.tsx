@@ -16,6 +16,69 @@ import { Menu, X, ChevronDown, CheckCircle, AlertCircle } from "lucide-react"
 import ClientLogosBanner from "@/components/client-logos-banner"
 import ProductMockup from "@/components/product-mockup"
 
+const faqItems = [
+  {
+    question: "What is the minimum order quantity?",
+    answer:
+      "Our minimum order quantity is typically 50 units for standard items like t-shirts and hoodies. For accessories and specialty items, MOQ may vary. We also offer smaller runs for premium or limited-edition drops — reach out and we'll work with your budget.",
+  },
+  {
+    question: "How long does production take?",
+    answer:
+      "Standard production takes 2–3 weeks from design approval. We offer expedited production (7–10 days) for urgent event needs. For large orders (500+ units) we recommend 3–4 weeks to maintain quality. Rush timelines are available — contact us to discuss.",
+  },
+  {
+    question: "Do you ship internationally?",
+    answer:
+      "Yes, we ship to 150+ countries worldwide. We've fulfilled orders for events in the US, Europe, Southeast Asia, and beyond. International shipping costs and timelines vary by destination — we'll provide a full quote upfront.",
+  },
+  {
+    question: "Can I pay with crypto?",
+    answer:
+      "Absolutely — we accept USDC, USDT, ETH, and other major tokens. We're one of the few merch partners fully set up for crypto-native payments. Traditional wire transfer and card payments are also accepted.",
+  },
+  {
+    question: "Do you provide design help?",
+    answer:
+      "Yes! Our in-house design team can work from your brand guidelines, logo files, or even a rough idea. We'll create mockups for approval before production begins. Design assistance is included for orders above a certain quantity — contact us for details.",
+  },
+  {
+    question: "Can I get samples before the full order?",
+    answer:
+      "Yes, samples are available on request. We recommend ordering samples for large runs so you can approve the quality, fit, and print before we proceed. Sample costs are typically credited toward your final order.",
+  },
+  {
+    question: "What kind of customisation is available?",
+    answer:
+      "Almost everything is customisable — fabric, colour, cut, print method (screen print, embroidery, DTG, sublimation), labels, tags, and packaging. We also offer NFC-enabled merch and RFID-protected bags for Web3-native experiences.",
+  },
+  {
+    question: "How do I get started?",
+    answer:
+      "Fill out the contact form below or reach us on Telegram (@siddyb26 or @aoife05). Share your brief — what you need, quantities, timeline, and any design references — and we'll respond within 24 hours with a quote.",
+  },
+]
+
+function FaqSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer,
+      },
+    })),
+  }
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false)
@@ -127,6 +190,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <FaqSchema />
       {/* Navigation */}
       <motion.header
         initial={{ y: -100, opacity: 0 }}
@@ -311,80 +375,92 @@ export default function Home() {
 
       {/* Hero Section - Catalog Style with Film Reel */}
       <section id="home" className="min-h-screen relative flex flex-col overflow-hidden bg-black">
-        {/* Animated Film Reel Background */}
+        {/* Animated Film Reel Background — CSS animation instead of JS for performance */}
         <div className="absolute inset-0 z-0 overflow-hidden">
+          <style>{`
+            @keyframes sw-scroll-left {
+              from { transform: translateX(0); }
+              to { transform: translateX(-1920px); }
+            }
+            @keyframes sw-scroll-right {
+              from { transform: translateX(-1920px); }
+              to { transform: translateX(0); }
+            }
+            .sw-hero-row-left { animation: sw-scroll-left 30s linear infinite; }
+            .sw-hero-row-right { animation: sw-scroll-right 35s linear infinite; }
+          `}</style>
           {/* Top Row - Moving Left (Set 1: Headwear, Apparel, Accessories) */}
-          <motion.div
-            animate={{ x: [0, -1920] }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="absolute top-[15%] left-0 flex gap-3"
+          <div
+            className="sw-hero-row-left absolute top-[15%] left-0 flex gap-3"
             style={{ width: "3840px" }}
           >
             {[...Array(2)].map((_, setIndex) => (
               <div key={setIndex} className="flex gap-3">
                 {[
-                  "/images/hero/black-baseball-cap.jpg",
-                  "/images/hero/balaclava.webp",
-                  "/images/hero/sleep-mask.jpg",
-                  "/images/hero/winter-beanie.webp",
-                  "/images/hero/orange-tshirt.jpg",
-                  "/images/hero/black-jacket.jpg",
-                  "/images/hero/hooded-neck-pillow.jpg",
-                  "/images/hero/enamel-pins.jpg",
-                  "/images/hero/passport-holders.jpg",
-                ].map((src, index) => (
+                  { src: "/images/hero/black-baseball-cap.jpg", alt: "black baseball cap web3 merch" },
+                  { src: "/images/hero/balaclava.webp", alt: "custom balaclava crypto merch" },
+                  { src: "/images/hero/sleep-mask.jpg", alt: "branded sleep mask merch" },
+                  { src: "/images/hero/winter-beanie.webp", alt: "custom winter beanie merch" },
+                  { src: "/images/hero/orange-tshirt.jpg", alt: "custom orange t-shirt merch" },
+                  { src: "/images/hero/black-jacket.jpg", alt: "custom black jacket merch" },
+                  { src: "/images/hero/hooded-neck-pillow.jpg", alt: "hooded neck pillow merch" },
+                  { src: "/images/hero/enamel-pins.jpg", alt: "custom enamel pins merch" },
+                  { src: "/images/hero/passport-holders.jpg", alt: "custom passport holder merch" },
+                ].map((item, index) => (
                   <div
                     key={`top-${setIndex}-${index}`}
                     className="relative w-48 h-56 flex-shrink-0 rounded-lg overflow-hidden border-2 border-[#BFF000]/60 grayscale-[50%] hover:grayscale-0 transition-all duration-300"
                   >
                     <Image
-                      src={src || "/placeholder.svg"}
-                      alt={`Product ${index + 1}`}
+                      src={item.src || "/placeholder.svg"}
+                      alt={item.alt}
                       fill
+                      sizes="192px"
+                      loading={setIndex === 0 && index < 4 ? "eager" : "lazy"}
                       className="object-cover"
                     />
                   </div>
                 ))}
               </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Bottom Row - Moving Right (Set 2: Different products) */}
-          <motion.div
-            animate={{ x: [-1920, 0] }}
-            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-[15%] left-0 flex gap-3"
+          <div
+            className="sw-hero-row-right absolute bottom-[15%] left-0 flex gap-3"
             style={{ width: "3840px" }}
           >
             {[...Array(2)].map((_, setIndex) => (
               <div key={setIndex} className="flex gap-3">
                 {[
-                  "/images/hero/dark-muffler.webp",
-                  "/images/hero/blue-socks.jpg",
-                  "/images/hero/puffer-jacket.webp",
-                  "/images/hero/fleece-gloves.webp",
-                  "/images/hero/white-bucket-hat.jpg",
-                  "/images/hero/green-knit-scarf.webp",
-                  "/images/hero/white-hoodie.webp",
-                  "/images/hero/sunglass-cases.jpg",
-                  "/images/hero/canvas-tote.jpg",
-                  "/images/hero/astronaut-sticker.jpg",
-                ].map((src, index) => (
+                  { src: "/images/hero/dark-muffler.webp", alt: "custom dark muffler merch" },
+                  { src: "/images/hero/blue-socks.jpg", alt: "custom blue socks merch" },
+                  { src: "/images/hero/puffer-jacket.webp", alt: "custom puffer jacket merch" },
+                  { src: "/images/hero/fleece-gloves.webp", alt: "custom fleece gloves merch" },
+                  { src: "/images/hero/white-bucket-hat.jpg", alt: "custom white bucket hat merch" },
+                  { src: "/images/hero/green-knit-scarf.webp", alt: "custom green knit scarf merch" },
+                  { src: "/images/hero/white-hoodie.webp", alt: "custom white hoodie merch" },
+                  { src: "/images/hero/sunglass-cases.jpg", alt: "custom sunglass case merch" },
+                  { src: "/images/hero/canvas-tote.jpg", alt: "custom canvas tote bag merch" },
+                  { src: "/images/hero/astronaut-sticker.jpg", alt: "custom astronaut sticker merch" },
+                ].map((item, index) => (
                   <div
                     key={`bottom-${setIndex}-${index}`}
                     className="relative w-48 h-56 flex-shrink-0 rounded-lg overflow-hidden border-2 border-[#BFF000]/60 grayscale-[50%] hover:grayscale-0 transition-all duration-300"
                   >
                     <Image
-                      src={src || "/placeholder.svg"}
-                      alt={`Product ${index + 1}`}
+                      src={item.src || "/placeholder.svg"}
+                      alt={item.alt}
                       fill
+                      sizes="192px"
+                      loading="lazy"
                       className="object-cover"
                     />
                   </div>
                 ))}
               </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Dark Gradient Overlay for Center Focus - adjusted for better visibility */}
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/10 to-black z-10" />
@@ -555,7 +631,8 @@ export default function Home() {
             {[
               {
                 title: "Crypto Native",
-                description: "Built for Web3 communities with blockchain-first mindset.",
+                description:
+                  "Designed by a team that lives in Web3 — DAO-branded apparel, NFT community drops, and crypto payment support built in, not bolted on.",
               },
               {
                 title: "Premium Material",
@@ -820,6 +897,21 @@ export default function Home() {
                 <span className="text-[#BFF000]">*</span> Samples on request
               </p>
             </div>
+
+            {/* Process description — readable summary for search/AI, not just icons */}
+            <div className="max-w-3xl mx-auto mt-12 text-center">
+              <p className="text-sm md:text-base text-gray-400 leading-relaxed">
+                Sickwear's process runs in seven steps. <span className="text-white">Discovery</span> starts
+                with understanding your brand or community's goals. We turn that into a{" "}
+                <span className="text-white">Brief</span> covering products, quantities, and timeline, then
+                create a <span className="text-white">Mockup</span> for your approval before anything is made.
+                Once approved, we move into <span className="text-white">Production</span> using our in-house
+                manufacturing, followed by <span className="text-white">QC & Pack</span> to check quality and
+                pack every order. From there, <span className="text-white">Shipping</span> begins with full
+                tracking to 150+ countries, ending in <span className="text-white">Delivery</span> right to
+                your door. Samples are available on request before any full production run.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -892,6 +984,8 @@ export default function Home() {
                   {category.img ? (
                     <>
                       <img
+                        loading="lazy"
+                        decoding="async"
                         src={category.img || "/placeholder.svg"}
                         alt={category.name}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -1056,16 +1150,16 @@ export default function Home() {
             {/* Column 1 — 6 items (removed eigencloud, moved to col3) */}
             <div className="flex flex-col gap-2">
               {[
-                { src: "/images/gallery/ethindia-flatlay.png", alt: "ETHIndia branded merch flat-lay" },
-                { src: "/images/gallery/debridge-hoodie.jpg", alt: "deBridge branded yellow hoodie" },
-                { src: "/images/gallery/wave-kimono.jpg", alt: "Custom wave print kimono at event" },
-                { src: "/images/gallery/fhe-summit.jpg", alt: "FHE Summit branded t-shirts" },
-                { src: "/images/gallery/ethindia-tote-bag.jpg", alt: "ETHIndia illustrated tote bag" },
-                { src: "/images/gallery/socket-box.jpg", alt: "Socket branded merch gift box" },
+                { src: "/images/gallery/ethindia-flatlay.png", alt: "ETHIndia branded merch flat-lay", w: 1536, h: 1024 },
+                { src: "/images/gallery/debridge-hoodie.jpg", alt: "deBridge branded yellow hoodie", w: 1536, h: 2048 },
+                { src: "/images/gallery/wave-kimono.jpg", alt: "Custom wave print kimono at event", w: 800, h: 1200 },
+                { src: "/images/gallery/fhe-summit.jpg", alt: "FHE Summit branded t-shirts", w: 2047, h: 1151 },
+                { src: "/images/gallery/ethindia-tote-bag.jpg", alt: "ETHIndia illustrated tote bag", w: 675, h: 1200 },
+                { src: "/images/gallery/socket-box.jpg", alt: "Socket branded merch gift box", w: 1280, h: 1280 },
               ].map((img, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.04 }}
                   className="overflow-hidden rounded-lg border border-white/10 cursor-pointer hover:border-[#BFF000]/50 transition-all" onClick={() => setLightboxImg(img.src)}>
-                  <img src={img.src} alt={img.alt} className="w-full h-auto block hover:scale-105 transition-transform duration-300" />
+                  <img loading="lazy" decoding="async" width={img.w} height={img.h} src={img.src} alt={img.alt} className="w-full h-auto block hover:scale-105 transition-transform duration-300" />
                 </motion.div>
               ))}
             </div>
@@ -1073,19 +1167,19 @@ export default function Home() {
             {/* Column 2 — 9 items (added ethglobal-cannes-tote + arbitrum-event from col4) */}
             <div className="flex flex-col gap-2">
               {[
-                { src: "/images/gallery/event-capes.png", alt: "Branded capes at conference" },
-                { src: "/images/gallery/cdp-backpack-ethindia.jpg", alt: "CDP backpack and merch at ETHIndia" },
-                { src: "/images/gallery/story-merch.jpg", alt: "Story Protocol branded merch" },
-                { src: "/images/gallery/ethmumbai-tote.jpg", alt: "ETHMumbai branded red tote bag" },
-                { src: "/images/gallery/multipli-set.png", alt: "Multipli branded black merch set" },
-                { src: "/images/gallery/og-socks-ethglobal.jpg", alt: "OG branded socks at ETHGlobal" },
-                { src: "/images/gallery/aethir-merch.jpg", alt: "Aethir branded t-shirts and stickers" },
-                { src: "/images/gallery/ethglobal-cannes-tote.jpg", alt: "ETHGlobal Cannes illustrated tote bag" },
-                { src: "/images/gallery/arbitrum-event.jpg", alt: "Arbitrum Open House event" },
+                { src: "/images/gallery/event-capes.png", alt: "Branded capes at conference", w: 1024, h: 1536 },
+                { src: "/images/gallery/cdp-backpack-ethindia.jpg", alt: "CDP backpack and merch at ETHIndia", w: 1200, h: 900 },
+                { src: "/images/gallery/story-merch.jpg", alt: "Story Protocol branded merch", w: 1536, h: 1024 },
+                { src: "/images/gallery/ethmumbai-tote.jpg", alt: "ETHMumbai branded red tote bag", w: 630, h: 840 },
+                { src: "/images/gallery/multipli-set.png", alt: "Multipli branded black merch set", w: 1024, h: 1024 },
+                { src: "/images/gallery/og-socks-ethglobal.jpg", alt: "OG branded socks at ETHGlobal", w: 657, h: 492 },
+                { src: "/images/gallery/aethir-merch.jpg", alt: "Aethir branded t-shirts and stickers", w: 2048, h: 1152 },
+                { src: "/images/gallery/ethglobal-cannes-tote.jpg", alt: "ETHGlobal Cannes illustrated tote bag", w: 1125, h: 844 },
+                { src: "/images/gallery/arbitrum-event.jpg", alt: "Arbitrum Open House event", w: 1240, h: 914 },
               ].map((img, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.04 + 0.03 }}
                   className="overflow-hidden rounded-lg border border-white/10 cursor-pointer hover:border-[#BFF000]/50 transition-all" onClick={() => setLightboxImg(img.src)}>
-                  <img src={img.src} alt={img.alt} className="w-full h-auto block hover:scale-105 transition-transform duration-300" />
+                  <img loading="lazy" decoding="async" width={img.w} height={img.h} src={img.src} alt={img.alt} className="w-full h-auto block hover:scale-105 transition-transform duration-300" />
                 </motion.div>
               ))}
             </div>
@@ -1093,19 +1187,19 @@ export default function Home() {
             {/* Column 3 — 9 items (added eigencloud from col1 + fluent-blend from col4) */}
             <div className="flex flex-col gap-2">
               {[
-                { src: "/images/gallery/gpu-rich-tees.jpg", alt: "GPU Rich branded t-shirts" },
-                { src: "/images/gallery/katerina-leather-set.jpg", alt: "Custom leather accessories gift set" },
-                { src: "/images/gallery/chain-abstraction-mafia.jpg", alt: "Chain Abstraction Mafia team t-shirts" },
-                { src: "/images/gallery/altlayer-tshirts.jpg", alt: "AltLayer branded t-shirts display" },
-                { src: "/images/gallery/talus-box.jpg", alt: "Talus branded merch gift box" },
-                { src: "/images/gallery/biconomy-tshirt-varanasi.jpg", alt: "Biconomy t-shirt at Varanasi ghats" },
-                { src: "/images/gallery/ethglobal-swag-bag.jpg", alt: "ETHGlobal New Delhi swag bag" },
-                { src: "/images/gallery/eigencloud-sunglasses.jpg", alt: "EigenCloud branded sunglasses" },
-                { src: "/images/gallery/fluent-blend.jpg", alt: "Fluent and Blend branded t-shirts" },
+                { src: "/images/gallery/gpu-rich-tees.jpg", alt: "GPU Rich branded t-shirts", w: 2048, h: 1366 },
+                { src: "/images/gallery/katerina-leather-set.jpg", alt: "Custom leather accessories gift set", w: 900, h: 1200 },
+                { src: "/images/gallery/chain-abstraction-mafia.jpg", alt: "Chain Abstraction Mafia team t-shirts", w: 4096, h: 2736 },
+                { src: "/images/gallery/altlayer-tshirts.jpg", alt: "AltLayer branded t-shirts display", w: 753, h: 564 },
+                { src: "/images/gallery/talus-box.jpg", alt: "Talus branded merch gift box", w: 1280, h: 995 },
+                { src: "/images/gallery/biconomy-tshirt-varanasi.jpg", alt: "Biconomy t-shirt at Varanasi ghats", w: 708, h: 531 },
+                { src: "/images/gallery/ethglobal-swag-bag.jpg", alt: "ETHGlobal New Delhi swag bag", w: 4096, h: 2304 },
+                { src: "/images/gallery/eigencloud-sunglasses.jpg", alt: "EigenCloud branded sunglasses", w: 718, h: 1200 },
+                { src: "/images/gallery/fluent-blend.jpg", alt: "Fluent and Blend branded t-shirts", w: 1536, h: 2048 },
               ].map((img, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.04 + 0.02 }}
                   className="overflow-hidden rounded-lg border border-white/10 cursor-pointer hover:border-[#BFF000]/50 transition-all" onClick={() => setLightboxImg(img.src)}>
-                  <img src={img.src} alt={img.alt} className="w-full h-auto block hover:scale-105 transition-transform duration-300" />
+                  <img loading="lazy" decoding="async" width={img.w} height={img.h} src={img.src} alt={img.alt} className="w-full h-auto block hover:scale-105 transition-transform duration-300" />
                 </motion.div>
               ))}
             </div>
@@ -1113,17 +1207,17 @@ export default function Home() {
             {/* Column 4 — 7 items (moved last 2 to col2) */}
             <div className="flex flex-col gap-2">
               {[
-                { src: "/images/gallery/notlikesus-hoodie.jpg", alt: "Not Like Sus custom hoodie back print" },
-                { src: "/images/gallery/copperx-cap.jpg", alt: "Copperx branded visor cap" },
-                { src: "/images/gallery/fluent-merch-table.jpg", alt: "Fluent merch table at event" },
-                { src: "/images/gallery/openhouse-merch.png", alt: "Open House Arbitrum merch" },
-                { src: "/images/gallery/devcon-leather-wallet.jpg", alt: "Devcon leather wallet and accessories" },
-                { src: "/images/gallery/akave-socks.png", alt: "AKAVE branded socks" },
-                { src: "/images/gallery/1inch-merch.jpg", alt: "1inch branded merch set flat-lay" },
+                { src: "/images/gallery/notlikesus-hoodie.jpg", alt: "Not Like Sus custom hoodie back print", w: 533, h: 711 },
+                { src: "/images/gallery/copperx-cap.jpg", alt: "Copperx branded visor cap", w: 1536, h: 2048 },
+                { src: "/images/gallery/fluent-merch-table.jpg", alt: "Fluent merch table at event", w: 800, h: 600 },
+                { src: "/images/gallery/openhouse-merch.png", alt: "Open House Arbitrum merch", w: 1536, h: 1024 },
+                { src: "/images/gallery/devcon-leather-wallet.jpg", alt: "Devcon leather wallet and accessories", w: 900, h: 1200 },
+                { src: "/images/gallery/akave-socks.png", alt: "AKAVE branded socks", w: 1024, h: 1536 },
+                { src: "/images/gallery/1inch-merch.jpg", alt: "1inch branded merch set flat-lay", w: 1536, h: 1024 },
               ].map((img, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.04 + 0.05 }}
                   className="overflow-hidden rounded-lg border border-white/10 cursor-pointer hover:border-[#BFF000]/50 transition-all" onClick={() => setLightboxImg(img.src)}>
-                  <img src={img.src} alt={img.alt} className="w-full h-auto block hover:scale-105 transition-transform duration-300" />
+                  <img loading="lazy" decoding="async" width={img.w} height={img.h} src={img.src} alt={img.alt} className="w-full h-auto block hover:scale-105 transition-transform duration-300" />
                 </motion.div>
               ))}
             </div>
@@ -1337,48 +1431,7 @@ export default function Home() {
               className="max-w-3xl mx-auto"
             >
               <Accordion type="single" collapsible className="space-y-3">
-                {[
-                  {
-                    question: "What is the minimum order quantity?",
-                    answer:
-                      "Our minimum order quantity is typically 50 units for standard items like t-shirts and hoodies. For accessories and specialty items, MOQ may vary. We also offer smaller runs for premium or limited-edition drops — reach out and we'll work with your budget.",
-                  },
-                  {
-                    question: "How long does production take?",
-                    answer:
-                      "Standard production takes 2–3 weeks from design approval. We offer expedited production (7–10 days) for urgent event needs. For large orders (500+ units) we recommend 3–4 weeks to maintain quality. Rush timelines are available — contact us to discuss.",
-                  },
-                  {
-                    question: "Do you ship internationally?",
-                    answer:
-                      "Yes, we ship to 150+ countries worldwide. We've fulfilled orders for events in the US, Europe, Southeast Asia, and beyond. International shipping costs and timelines vary by destination — we'll provide a full quote upfront.",
-                  },
-                  {
-                    question: "Can I pay with crypto?",
-                    answer:
-                      "Absolutely — we accept USDC, USDT, ETH, and other major tokens. We're one of the few merch partners fully set up for crypto-native payments. Traditional wire transfer and card payments are also accepted.",
-                  },
-                  {
-                    question: "Do you provide design help?",
-                    answer:
-                      "Yes! Our in-house design team can work from your brand guidelines, logo files, or even a rough idea. We'll create mockups for approval before production begins. Design assistance is included for orders above a certain quantity — contact us for details.",
-                  },
-                  {
-                    question: "Can I get samples before the full order?",
-                    answer:
-                      "Yes, samples are available on request. We recommend ordering samples for large runs so you can approve the quality, fit, and print before we proceed. Sample costs are typically credited toward your final order.",
-                  },
-                  {
-                    question: "What kind of customisation is available?",
-                    answer:
-                      "Almost everything is customisable — fabric, colour, cut, print method (screen print, embroidery, DTG, sublimation), labels, tags, and packaging. We also offer NFC-enabled merch and RFID-protected bags for Web3-native experiences.",
-                  },
-                  {
-                    question: "How do I get started?",
-                    answer:
-                      "Fill out the contact form below or reach us on Telegram (@siddyb26 or @aoife05). Share your brief — what you need, quantities, timeline, and any design references — and we'll respond within 24 hours with a quote.",
-                  },
-                ].map((item, index) => (
+                {faqItems.map((item, index) => (
                   <AccordionItem
                     key={index}
                     value={`item-${index + 1}`}
@@ -1779,7 +1832,7 @@ export default function Home() {
           </div>
 
           <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-gray-500">© {new Date().getFullYear()} Sickwear. All rights reserved.</p>
+            <p className="text-sm text-gray-500">© {new Date().getFullYear()} Sickwear. All rights reserved. · Page last updated July 2026</p>
             <div className="flex gap-6">
               <a href="/brand" className="text-xs text-gray-500 hover:text-[#BFF000] transition-colors">Brand Guidelines</a>
               <a href="/overview" className="text-xs text-gray-500 hover:text-[#BFF000] transition-colors">Overview</a>
