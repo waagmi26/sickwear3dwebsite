@@ -397,15 +397,15 @@ export default function Home() {
             {[...Array(2)].map((_, setIndex) => (
               <div key={setIndex} className="flex gap-3">
                 {[
-                  { src: "/images/hero/black-baseball-cap.jpg", alt: "black baseball cap web3 merch" },
-                  { src: "/images/hero/balaclava.webp", alt: "custom balaclava crypto merch" },
-                  { src: "/images/hero/sleep-mask.jpg", alt: "branded sleep mask merch" },
-                  { src: "/images/hero/winter-beanie.webp", alt: "custom winter beanie merch" },
-                  { src: "/images/hero/orange-tshirt.jpg", alt: "custom orange t-shirt merch" },
-                  { src: "/images/hero/black-jacket.jpg", alt: "custom black jacket merch" },
-                  { src: "/images/hero/hooded-neck-pillow.jpg", alt: "hooded neck pillow merch" },
-                  { src: "/images/hero/enamel-pins.jpg", alt: "custom enamel pins merch" },
-                  { src: "/images/hero/passport-holders.jpg", alt: "custom passport holder merch" },
+                  { src: "/images/optimized/hero-black-baseball-cap.webp", alt: "black baseball cap web3 merch" },
+                  { src: "/images/optimized/hero-balaclava.webp", alt: "custom balaclava crypto merch" },
+                  { src: "/images/optimized/hero-sleep-mask.webp", alt: "branded sleep mask merch" },
+                  { src: "/images/optimized/hero-winter-beanie.webp", alt: "custom winter beanie merch" },
+                  { src: "/images/optimized/hero-orange-tshirt.webp", alt: "custom orange t-shirt merch" },
+                  { src: "/images/optimized/hero-black-jacket.webp", alt: "custom black jacket merch" },
+                  { src: "/images/optimized/hero-hooded-neck-pillow.webp", alt: "hooded neck pillow merch" },
+                  { src: "/images/optimized/hero-enamel-pins.webp", alt: "custom enamel pins merch" },
+                  { src: "/images/optimized/hero-passport-holders.webp", alt: "custom passport holder merch" },
                 ].map((item, index) => (
                   <div
                     key={`top-${setIndex}-${index}`}
@@ -433,16 +433,16 @@ export default function Home() {
             {[...Array(2)].map((_, setIndex) => (
               <div key={setIndex} className="flex gap-3">
                 {[
-                  { src: "/images/hero/dark-muffler.webp", alt: "custom dark muffler merch" },
-                  { src: "/images/hero/blue-socks.jpg", alt: "custom blue socks merch" },
-                  { src: "/images/hero/puffer-jacket.webp", alt: "custom puffer jacket merch" },
-                  { src: "/images/hero/fleece-gloves.webp", alt: "custom fleece gloves merch" },
-                  { src: "/images/hero/white-bucket-hat.jpg", alt: "custom white bucket hat merch" },
-                  { src: "/images/hero/green-knit-scarf.webp", alt: "custom green knit scarf merch" },
-                  { src: "/images/hero/white-hoodie.webp", alt: "custom white hoodie merch" },
-                  { src: "/images/hero/sunglass-cases.jpg", alt: "custom sunglass case merch" },
-                  { src: "/images/hero/canvas-tote.jpg", alt: "custom canvas tote bag merch" },
-                  { src: "/images/hero/astronaut-sticker.jpg", alt: "custom astronaut sticker merch" },
+                  { src: "/images/optimized/hero-dark-muffler.webp", alt: "custom dark muffler merch" },
+                  { src: "/images/optimized/hero-blue-socks.webp", alt: "custom blue socks merch" },
+                  { src: "/images/optimized/hero-puffer-jacket.webp", alt: "custom puffer jacket merch" },
+                  { src: "/images/optimized/hero-fleece-gloves.webp", alt: "custom fleece gloves merch" },
+                  { src: "/images/optimized/hero-white-bucket-hat.webp", alt: "custom white bucket hat merch" },
+                  { src: "/images/optimized/hero-green-knit-scarf.webp", alt: "custom green knit scarf merch" },
+                  { src: "/images/optimized/hero-white-hoodie.webp", alt: "custom white hoodie merch" },
+                  { src: "/images/optimized/hero-sunglass-cases.webp", alt: "custom sunglass case merch" },
+                  { src: "/images/optimized/hero-canvas-tote.webp", alt: "custom canvas tote bag merch" },
+                  { src: "/images/optimized/hero-astronaut-sticker.webp", alt: "custom astronaut sticker merch" },
                 ].map((item, index) => (
                   <div
                     key={`bottom-${setIndex}-${index}`}
@@ -1150,15 +1150,15 @@ export default function Home() {
             {/* Column 1 — 6 items (removed eigencloud, moved to col3) */}
             <div className="flex flex-col gap-2">
               {[
-                { src: "/images/gallery/ethindia-flatlay.png", alt: "ETHIndia branded merch flat-lay", w: 1536, h: 1024 },
-                { src: "/images/gallery/debridge-hoodie.jpg", alt: "deBridge branded yellow hoodie", w: 1536, h: 2048 },
-                { src: "/images/gallery/wave-kimono.jpg", alt: "Custom wave print kimono at event", w: 800, h: 1200 },
-                { src: "/images/gallery/fhe-summit.jpg", alt: "FHE Summit branded t-shirts", w: 2047, h: 1151 },
-                { src: "/images/gallery/ethindia-tote-bag.jpg", alt: "ETHIndia illustrated tote bag", w: 675, h: 1200 },
-                { src: "/images/gallery/socket-box.jpg", alt: "Socket branded merch gift box", w: 1280, h: 1280 },
+                { src: "/images/optimized/gallery-ethindia-flatlay-sm.webp", alt: "ETHIndia branded merch flat-lay", w: 1536, h: 1024 },
+                { src: "/images/optimized/gallery-debridge-hoodie-sm.webp", alt: "deBridge branded yellow hoodie", w: 1536, h: 2048 },
+                { src: "/images/optimized/gallery-wave-kimono-sm.webp", alt: "Custom wave print kimono at event", w: 800, h: 1200 },
+                { src: "/images/optimized/gallery-fhe-summit-sm.webp", alt: "FHE Summit branded t-shirts", w: 2047, h: 1151 },
+                { src: "/images/optimized/gallery-ethindia-tote-bag-sm.webp", alt: "ETHIndia illustrated tote bag", w: 675, h: 1200 },
+                { src: "/images/optimized/gallery-socket-box-sm.webp", alt: "Socket branded merch gift box", w: 1280, h: 1280 },
               ].map((img, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.04 }}
-                  className="overflow-hidden rounded-lg border border-white/10 cursor-pointer hover:border-[#BFF000]/50 transition-all" onClick={() => setLightboxImg(img.src)}>
+                  className="overflow-hidden rounded-lg border border-white/10 cursor-pointer hover:border-[#BFF000]/50 transition-all" onClick={() => setLightboxImg(img.src.replace("-sm.webp", "-lg.webp"))}>
                   <img loading="lazy" decoding="async" width={img.w} height={img.h} src={img.src} alt={img.alt} className="w-full h-auto block hover:scale-105 transition-transform duration-300" />
                 </motion.div>
               ))}
@@ -1167,18 +1167,18 @@ export default function Home() {
             {/* Column 2 — 9 items (added ethglobal-cannes-tote + arbitrum-event from col4) */}
             <div className="flex flex-col gap-2">
               {[
-                { src: "/images/gallery/event-capes.png", alt: "Branded capes at conference", w: 1024, h: 1536 },
-                { src: "/images/gallery/cdp-backpack-ethindia.jpg", alt: "CDP backpack and merch at ETHIndia", w: 1200, h: 900 },
-                { src: "/images/gallery/story-merch.jpg", alt: "Story Protocol branded merch", w: 1536, h: 1024 },
-                { src: "/images/gallery/ethmumbai-tote.jpg", alt: "ETHMumbai branded red tote bag", w: 630, h: 840 },
-                { src: "/images/gallery/multipli-set.png", alt: "Multipli branded black merch set", w: 1024, h: 1024 },
-                { src: "/images/gallery/og-socks-ethglobal.jpg", alt: "OG branded socks at ETHGlobal", w: 657, h: 492 },
-                { src: "/images/gallery/aethir-merch.jpg", alt: "Aethir branded t-shirts and stickers", w: 2048, h: 1152 },
-                { src: "/images/gallery/ethglobal-cannes-tote.jpg", alt: "ETHGlobal Cannes illustrated tote bag", w: 1125, h: 844 },
-                { src: "/images/gallery/arbitrum-event.jpg", alt: "Arbitrum Open House event", w: 1240, h: 914 },
+                { src: "/images/optimized/gallery-event-capes-sm.webp", alt: "Branded capes at conference", w: 1024, h: 1536 },
+                { src: "/images/optimized/gallery-cdp-backpack-ethindia-sm.webp", alt: "CDP backpack and merch at ETHIndia", w: 1200, h: 900 },
+                { src: "/images/optimized/gallery-story-merch-sm.webp", alt: "Story Protocol branded merch", w: 1536, h: 1024 },
+                { src: "/images/optimized/gallery-ethmumbai-tote-sm.webp", alt: "ETHMumbai branded red tote bag", w: 630, h: 840 },
+                { src: "/images/optimized/gallery-multipli-set-sm.webp", alt: "Multipli branded black merch set", w: 1024, h: 1024 },
+                { src: "/images/optimized/gallery-og-socks-ethglobal-sm.webp", alt: "OG branded socks at ETHGlobal", w: 657, h: 492 },
+                { src: "/images/optimized/gallery-aethir-merch-sm.webp", alt: "Aethir branded t-shirts and stickers", w: 2048, h: 1152 },
+                { src: "/images/optimized/gallery-ethglobal-cannes-tote-sm.webp", alt: "ETHGlobal Cannes illustrated tote bag", w: 1125, h: 844 },
+                { src: "/images/optimized/gallery-arbitrum-event-sm.webp", alt: "Arbitrum Open House event", w: 1240, h: 914 },
               ].map((img, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.04 + 0.03 }}
-                  className="overflow-hidden rounded-lg border border-white/10 cursor-pointer hover:border-[#BFF000]/50 transition-all" onClick={() => setLightboxImg(img.src)}>
+                  className="overflow-hidden rounded-lg border border-white/10 cursor-pointer hover:border-[#BFF000]/50 transition-all" onClick={() => setLightboxImg(img.src.replace("-sm.webp", "-lg.webp"))}>
                   <img loading="lazy" decoding="async" width={img.w} height={img.h} src={img.src} alt={img.alt} className="w-full h-auto block hover:scale-105 transition-transform duration-300" />
                 </motion.div>
               ))}
@@ -1187,18 +1187,18 @@ export default function Home() {
             {/* Column 3 — 9 items (added eigencloud from col1 + fluent-blend from col4) */}
             <div className="flex flex-col gap-2">
               {[
-                { src: "/images/gallery/gpu-rich-tees.jpg", alt: "GPU Rich branded t-shirts", w: 2048, h: 1366 },
-                { src: "/images/gallery/katerina-leather-set.jpg", alt: "Custom leather accessories gift set", w: 900, h: 1200 },
-                { src: "/images/gallery/chain-abstraction-mafia.jpg", alt: "Chain Abstraction Mafia team t-shirts", w: 4096, h: 2736 },
-                { src: "/images/gallery/altlayer-tshirts.jpg", alt: "AltLayer branded t-shirts display", w: 753, h: 564 },
-                { src: "/images/gallery/talus-box.jpg", alt: "Talus branded merch gift box", w: 1280, h: 995 },
-                { src: "/images/gallery/biconomy-tshirt-varanasi.jpg", alt: "Biconomy t-shirt at Varanasi ghats", w: 708, h: 531 },
-                { src: "/images/gallery/ethglobal-swag-bag.jpg", alt: "ETHGlobal New Delhi swag bag", w: 4096, h: 2304 },
-                { src: "/images/gallery/eigencloud-sunglasses.jpg", alt: "EigenCloud branded sunglasses", w: 718, h: 1200 },
-                { src: "/images/gallery/fluent-blend.jpg", alt: "Fluent and Blend branded t-shirts", w: 1536, h: 2048 },
+                { src: "/images/optimized/gallery-gpu-rich-tees-sm.webp", alt: "GPU Rich branded t-shirts", w: 2048, h: 1366 },
+                { src: "/images/optimized/gallery-katerina-leather-set-sm.webp", alt: "Custom leather accessories gift set", w: 900, h: 1200 },
+                { src: "/images/optimized/gallery-chain-abstraction-mafia-sm.webp", alt: "Chain Abstraction Mafia team t-shirts", w: 4096, h: 2736 },
+                { src: "/images/optimized/gallery-altlayer-tshirts-sm.webp", alt: "AltLayer branded t-shirts display", w: 753, h: 564 },
+                { src: "/images/optimized/gallery-talus-box-sm.webp", alt: "Talus branded merch gift box", w: 1280, h: 995 },
+                { src: "/images/optimized/gallery-biconomy-tshirt-varanasi-sm.webp", alt: "Biconomy t-shirt at Varanasi ghats", w: 708, h: 531 },
+                { src: "/images/optimized/gallery-ethglobal-swag-bag-sm.webp", alt: "ETHGlobal New Delhi swag bag", w: 4096, h: 2304 },
+                { src: "/images/optimized/gallery-eigencloud-sunglasses-sm.webp", alt: "EigenCloud branded sunglasses", w: 718, h: 1200 },
+                { src: "/images/optimized/gallery-fluent-blend-sm.webp", alt: "Fluent and Blend branded t-shirts", w: 1536, h: 2048 },
               ].map((img, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.04 + 0.02 }}
-                  className="overflow-hidden rounded-lg border border-white/10 cursor-pointer hover:border-[#BFF000]/50 transition-all" onClick={() => setLightboxImg(img.src)}>
+                  className="overflow-hidden rounded-lg border border-white/10 cursor-pointer hover:border-[#BFF000]/50 transition-all" onClick={() => setLightboxImg(img.src.replace("-sm.webp", "-lg.webp"))}>
                   <img loading="lazy" decoding="async" width={img.w} height={img.h} src={img.src} alt={img.alt} className="w-full h-auto block hover:scale-105 transition-transform duration-300" />
                 </motion.div>
               ))}
@@ -1207,16 +1207,16 @@ export default function Home() {
             {/* Column 4 — 7 items (moved last 2 to col2) */}
             <div className="flex flex-col gap-2">
               {[
-                { src: "/images/gallery/notlikesus-hoodie.jpg", alt: "Not Like Sus custom hoodie back print", w: 533, h: 711 },
-                { src: "/images/gallery/copperx-cap.jpg", alt: "Copperx branded visor cap", w: 1536, h: 2048 },
-                { src: "/images/gallery/fluent-merch-table.jpg", alt: "Fluent merch table at event", w: 800, h: 600 },
-                { src: "/images/gallery/openhouse-merch.png", alt: "Open House Arbitrum merch", w: 1536, h: 1024 },
-                { src: "/images/gallery/devcon-leather-wallet.jpg", alt: "Devcon leather wallet and accessories", w: 900, h: 1200 },
-                { src: "/images/gallery/akave-socks.png", alt: "AKAVE branded socks", w: 1024, h: 1536 },
-                { src: "/images/gallery/1inch-merch.jpg", alt: "1inch branded merch set flat-lay", w: 1536, h: 1024 },
+                { src: "/images/optimized/gallery-notlikesus-hoodie-sm.webp", alt: "Not Like Sus custom hoodie back print", w: 533, h: 711 },
+                { src: "/images/optimized/gallery-copperx-cap-sm.webp", alt: "Copperx branded visor cap", w: 1536, h: 2048 },
+                { src: "/images/optimized/gallery-fluent-merch-table-sm.webp", alt: "Fluent merch table at event", w: 800, h: 600 },
+                { src: "/images/optimized/gallery-openhouse-merch-sm.webp", alt: "Open House Arbitrum merch", w: 1536, h: 1024 },
+                { src: "/images/optimized/gallery-devcon-leather-wallet-sm.webp", alt: "Devcon leather wallet and accessories", w: 900, h: 1200 },
+                { src: "/images/optimized/gallery-akave-socks-sm.webp", alt: "AKAVE branded socks", w: 1024, h: 1536 },
+                { src: "/images/optimized/gallery-1inch-merch-sm.webp", alt: "1inch branded merch set flat-lay", w: 1536, h: 1024 },
               ].map((img, i) => (
                 <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.04 + 0.05 }}
-                  className="overflow-hidden rounded-lg border border-white/10 cursor-pointer hover:border-[#BFF000]/50 transition-all" onClick={() => setLightboxImg(img.src)}>
+                  className="overflow-hidden rounded-lg border border-white/10 cursor-pointer hover:border-[#BFF000]/50 transition-all" onClick={() => setLightboxImg(img.src.replace("-sm.webp", "-lg.webp"))}>
                   <img loading="lazy" decoding="async" width={img.w} height={img.h} src={img.src} alt={img.alt} className="w-full h-auto block hover:scale-105 transition-transform duration-300" />
                 </motion.div>
               ))}
