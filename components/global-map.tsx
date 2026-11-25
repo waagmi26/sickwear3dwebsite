@@ -12,9 +12,7 @@ interface EventLocation {
 
 const eventLocations: EventLocation[] = [
   { name: "ETHDenver", country: "USA", description: "Denver, Colorado", coordinates: { x: 17, y: 17 } },
-  { name: "EthCC Cannes", country: "France", description: "Cannes", coordinates: { x: 47, y: 18 } },
-  { name: "EthCC Paris", country: "France", description: "Paris", coordinates: { x: 47, y: 16 } },
-  { name: "EthCC Berlin", country: "Germany", description: "Berlin", coordinates: { x: 51, y: 14 } },
+  { name: "EthCC", country: "Europe", description: "A different city each year", coordinates: { x: 47, y: 16 } },
   { name: "Token2049 Singapore", country: "Singapore", description: "Singapore", coordinates: { x: 79, y: 32 } },
   { name: "Token2049 Dubai", country: "UAE", description: "Dubai", coordinates: { x: 62, y: 24 } },
   { name: "Consensus Hong Kong", country: "Hong Kong", description: "Hong Kong", coordinates: { x: 81, y: 23 } },
@@ -24,8 +22,8 @@ const eventLocations: EventLocation[] = [
   { name: "ETHGlobal New York", country: "USA", description: "New York", coordinates: { x: 26, y: 15 } },
   { name: "ETHGlobal India", country: "India", description: "India", coordinates: { x: 70, y: 28 } },
   { name: "Devcon Thailand", country: "Thailand", description: "Bangkok", coordinates: { x: 78, y: 27 } },
-  { name: "Devcon Argentina", country: "Argentina", description: "Buenos Aires", coordinates: { x: 30, y: 42 } },
-  { name: "Devcon Istanbul", country: "Turkey", description: "Istanbul", coordinates: { x: 57, y: 19 } },
+  { name: "Devconnect Argentina", country: "Argentina", description: "Buenos Aires", coordinates: { x: 30, y: 42 } },
+  { name: "Devconnect Istanbul", country: "Turkey", description: "Istanbul", coordinates: { x: 57, y: 19 } },
   { name: "Blockchain Week Dubai", country: "UAE", description: "Dubai", coordinates: { x: 62, y: 24 } },
   { name: "Blockchain Week Paris", country: "France", description: "Paris", coordinates: { x: 47, y: 16 } },
   { name: "Blockchain Week Korea", country: "South Korea", description: "Seoul", coordinates: { x: 86, y: 19 } },
@@ -33,7 +31,7 @@ const eventLocations: EventLocation[] = [
   { name: "Blockchain Week Japan", country: "Japan", description: "Tokyo", coordinates: { x: 89, y: 18 } },
   { name: "Solana Breakpoint Abu Dhabi", country: "UAE", description: "Abu Dhabi", coordinates: { x: 61, y: 25 } },
   { name: "Blockchain Week New York", country: "USA", description: "New York", coordinates: { x: 26, y: 15 } },
-  { name: "Web3 Summit", country: "Portugal", description: "Lisbon", coordinates: { x: 42, y: 19 } },
+  { name: "Web3 Summit", country: "Germany", description: "Berlin", coordinates: { x: 51, y: 14 } },
   { name: "Blocktrain", country: "India", description: "India", coordinates: { x: 70, y: 28 } },
 ]
 
@@ -665,8 +663,8 @@ export default function GlobalMap() {
             className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
           >
             {[
-              { label: "Countries", value: "20+" },
-              { label: "Events", value: "25+" },
+              { label: "Event Countries", value: "20+" },
+              { label: "Global Events", value: "25+" },
               { label: "Clients", value: "150+" },
               { label: "Products", value: "30k+" },
             ].map((stat, index) => (
