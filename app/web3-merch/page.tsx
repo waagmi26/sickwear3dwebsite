@@ -59,7 +59,7 @@ export default function Web3MerchPage() {
         },
         {
           heading: "Who we have worked with",
-          body: "Clients shown on our site include Coinbase, OKX, ETHGlobal, Polkadot, LayerZero, Scroll, Safe, Story Protocol, Aptos, Zerion, Biconomy, deBridge and Bitget.",
+          body: "Sickwear has worked with 150+ companies and organizations. Clients shown on our site include Coinbase, OKX, ETHGlobal, Polkadot, LayerZero, Scroll, Safe, Story Protocol, Aptos, Zerion, Biconomy, deBridge and Bitget.",
         },
         {
           heading: "How an order works",

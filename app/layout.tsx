@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | Sickwear",
   },
   description:
-    "Custom Web3, event & personalized merch trusted by Coinbase, ETHGlobal, OKX & Polkadot. Made in India, shipped to 150+ countries, crypto or fiat payment.",
+    "Custom Web3, event & personalized merch trusted by 150+ clients including Coinbase, ETHGlobal & OKX. Made in India, shipped worldwide, crypto or fiat payment.",
   keywords: [
     "web3 merch",
     "web3 merchandise",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Sickwear",
     title: "Sickwear – Web3, Event & Personalized Merch Partner",
     description:
-      "Custom Web3, event & personalized merch trusted by Coinbase, ETHGlobal, OKX & Polkadot. Made in India, shipped to 150+ countries, crypto or fiat payment.",
+      "Custom Web3, event & personalized merch trusted by 150+ clients including Coinbase, ETHGlobal & OKX. Made in India, shipped worldwide, crypto or fiat payment.",
     images: [
       {
         url: "/images/sickwear-og.jpg",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     creator: "@sickwear_xyz",
     title: "Sickwear – Web3, Event & Personalized Merch Partner",
     description:
-      "Custom Web3, event & personalized merch trusted by Coinbase, ETHGlobal, OKX & Polkadot. Made in India, shipped to 150+ countries, crypto or fiat payment.",
+      "Custom Web3, event & personalized merch trusted by 150+ clients including Coinbase, ETHGlobal & OKX. Made in India, shipped worldwide, crypto or fiat payment.",
     images: ["/images/sickwear-og.jpg"],
   },
   robots: {

@@ -1,6 +1,7 @@
 const facts = [
   ["What we do", "Custom merchandise for Web3 projects, events, communities and brands"],
   ["Products", "Apparel, accessories, bags, leather goods, drinkware, gadgets, stationery, event items and gift hampers"],
+  ["Clients", "150+ companies and organizations worldwide"],
   ["Minimum order", "Typically 50 units for standard items; smaller premium runs on request"],
   ["Production time", "2–3 weeks from design approval; 7–10 days expedited"],
   ["Shipping", "150+ countries, with tracking"],

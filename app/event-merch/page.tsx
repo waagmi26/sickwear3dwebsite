@@ -61,7 +61,7 @@ export default function EventMerchPage() {
         },
         {
           heading: "Event organisers and communities",
-          body: "Clients shown on our site include ETHGlobal, ETHIndia, Devfolio, PizzaDAO and Polkadot.",
+          body: "Sickwear has worked with 150+ companies and organizations. Clients shown on our site include ETHGlobal, ETHIndia, Devfolio, PizzaDAO and Polkadot.",
         },
       ]}
       quotes={[
