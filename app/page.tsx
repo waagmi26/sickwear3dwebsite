@@ -15,6 +15,7 @@ import { Menu, X, ChevronDown, CheckCircle, AlertCircle } from "lucide-react"
 
 import ClientLogosBanner from "@/components/client-logos-banner"
 import ProductMockup from "@/components/product-mockup"
+import AboutSickwear from "@/components/about-sickwear"
 
 const faqItems = [
   {
@@ -483,6 +484,9 @@ export default function Home() {
                   <span className="block text-[#BFF000]">WEB3</span>
                   <span className="block text-white">COLLECTION...</span>
                 </motion.h1>
+                <p className="mt-5 text-sm md:text-base text-white/80 max-w-md mx-auto lg:mx-0">
+                  Custom Web3, event and personalized merch. Made in India, shipped to 150+ countries, paid in crypto or fiat.
+                </p>
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -1398,6 +1402,8 @@ export default function Home() {
       </section>
 
       {/* FAQ + Contact + Footer Section */}
+      <AboutSickwear />
+
       <section id="contact" className="min-h-screen bg-black flex items-center justify-center">
         <div className="container mx-auto px-4 py-32">
           {/* FAQ Section */}
@@ -1440,7 +1446,7 @@ export default function Home() {
                     <AccordionTrigger className="px-4 py-3 bg-white/5 hover:bg-white/10 text-left font-medium text-sm text-white hover:text-[#BFF000] transition-colors [&[data-state=open]]:text-[#BFF000]">
                       {item.question}
                     </AccordionTrigger>
-                    <AccordionContent className="px-4 py-3 text-gray-400 text-sm">
+                    <AccordionContent forceMount className="px-4 py-3 text-gray-400 text-sm [[data-state=closed]>&]:hidden">
                       {item.answer.includes('@siddyb26') ? (
                         <>
                           Fill out the contact form below or reach us on Telegram ({' '}
@@ -1788,6 +1794,8 @@ export default function Home() {
                   { label: "Clients", href: "#clients" },
                   { label: "FAQ", href: "#faq" },
                   { label: "Contact", href: "#contact-form" },
+                  { label: "Web3 Merch", href: "/web3-merch" },
+                  { label: "Event Merch", href: "/event-merch" },
                 ].map((link) => (
                   <li key={link.label}>
                     <a href={link.href} className="text-gray-400 text-sm hover:text-[#BFF000] transition-colors">
@@ -1832,7 +1840,7 @@ export default function Home() {
           </div>
 
           <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-gray-500">© {new Date().getFullYear()} Sickwear. All rights reserved. · Page last updated July 2026</p>
+            <p className="text-sm text-gray-500">© {new Date().getFullYear()} Sickwear. All rights reserved. · Page last updated November 2026</p>
             <div className="flex gap-6">
               <a href="/brand" className="text-xs text-gray-500 hover:text-[#BFF000] transition-colors">Brand Guidelines</a>
               <a href="/overview" className="text-xs text-gray-500 hover:text-[#BFF000] transition-colors">Overview</a>

@@ -455,7 +455,7 @@ export default function GlobalMap() {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto text-center mb-12"
         >
-          <motion.h2
+          <motion.h1
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -463,7 +463,7 @@ export default function GlobalMap() {
             className="text-3xl md:text-5xl font-bold mb-4 text-white"
           >
             Global Presence
-          </motion.h2>
+          </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
