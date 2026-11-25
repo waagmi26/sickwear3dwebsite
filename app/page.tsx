@@ -58,6 +58,11 @@ const faqItems = [
     answer:
       "Fill out the contact form below or reach us on Telegram (@siddyb26 or @aoife05). Share your brief — what you need, quantities, timeline, and any design references — and we'll respond within 24 hours with a quote.",
   },
+  {
+    question: "Is Sickwear connected to Sickkwear?",
+    answer:
+      "No. Sickwear (sickwear.xyz) is a custom merchandise company and is not connected to Sickkwear or other similarly spelled businesses. If you see a card charge you don't recognise from a similar name, contact that business or your card issuer.",
+  },
 ]
 
 function FaqSchema() {
