@@ -1182,10 +1182,9 @@ export default function Home() {
                   initial={{ scale: 0.8 }}
                   animate={{ scale: 1 }}
                   exit={{ scale: 0.8 }}
-                  className="relative max-w-4xl max-h-[90vh] w-full cursor-default"
-                  onClick={(e) => e.stopPropagation()}
+                  className="relative max-w-4xl max-h-[90vh] w-full"
                 >
-                  <img src={lightboxImg} alt="Gallery" className="w-full h-auto max-h-[85vh] object-contain rounded-lg select-none" draggable={false} />
+                  <img src={lightboxImg} alt="Gallery" className="block mx-auto max-w-full w-auto h-auto max-h-[85vh] object-contain rounded-lg select-none cursor-default" draggable={false} onClick={(e) => e.stopPropagation()} />
                 </motion.div>
               </motion.div>
             )}
