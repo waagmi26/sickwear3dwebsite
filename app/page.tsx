@@ -213,9 +213,11 @@ export default function Home() {
       {/* Navigation */}
       <motion.header
         initial={{ y: -100, opacity: 0 }}
-        animate={{ y: selectedCategory ? -100 : 0, opacity: selectedCategory ? 0 : 1 }}
+        animate={{ y: selectedCategory || lightboxImg ? -100 : 0, opacity: selectedCategory || lightboxImg ? 0 : 1 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          selectedCategory || lightboxImg ? "pointer-events-none" : ""
+        } ${
           scrolled ? "bg-black/80 backdrop-blur-md py-3" : "bg-transparent py-5"
         }`}
       >
