@@ -97,6 +97,19 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<{ name: string; img: string; cols?: number; rows?: number; items?: string[] } | null>(null)
   const [lightboxImg, setLightboxImg] = useState<string | null>(null)
 
+  // Close the product and gallery lightboxes with the Escape key
+  useEffect(() => {
+    if (!selectedCategory && !lightboxImg) return
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedCategory(null)
+        setLightboxImg(null)
+      }
+    }
+    window.addEventListener("keydown", onKeyDown)
+    return () => window.removeEventListener("keydown", onKeyDown)
+  }, [selectedCategory, lightboxImg])
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
@@ -1033,6 +1046,17 @@ export default function Home() {
                 onClick={() => setSelectedCategory(null)}
               >
                 <div className="absolute inset-0 bg-black" />
+                <button
+                  type="button"
+                  aria-label="Close"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setSelectedCategory(null)
+                  }}
+                  className="absolute top-4 right-4 md:top-6 md:right-6 z-30 w-11 h-11 rounded-full bg-white/10 hover:bg-[#BFF000] hover:text-black text-white flex items-center justify-center transition-colors cursor-pointer"
+                >
+                  <X className="w-6 h-6" />
+                </button>
                 <motion.div
                   initial={{ scale: 0.92, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -1048,8 +1072,8 @@ export default function Home() {
                   </div>
 
                   {/* Image with labels overlaid under each product */}
-                  <div className="relative w-full h-full flex items-center justify-center p-6 md:p-12" onClick={(e) => e.stopPropagation()}>
-                    <div className="relative aspect-square" style={{ height: "min(85vh, 85vw)" }}>
+                  <div className="relative w-full h-full flex items-center justify-center p-6 md:p-12">
+                    <div className="relative aspect-square cursor-default" style={{ height: "min(85vh, 85vw)" }} onClick={(e) => e.stopPropagation()}>
                       <img
                         src={selectedCategory.img || "/placeholder.svg"}
                         alt={selectedCategory.name}
@@ -1141,6 +1165,17 @@ export default function Home() {
                 className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-pointer"
                 onClick={() => setLightboxImg(null)}
               >
+                <button
+                  type="button"
+                  aria-label="Close"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setLightboxImg(null)
+                  }}
+                  className="absolute top-4 right-4 md:top-6 md:right-6 z-30 w-11 h-11 rounded-full bg-white/10 hover:bg-[#BFF000] hover:text-black text-white flex items-center justify-center transition-colors cursor-pointer"
+                >
+                  <X className="w-6 h-6" />
+                </button>
                 <motion.div
                   initial={{ scale: 0.8 }}
                   animate={{ scale: 1 }}
